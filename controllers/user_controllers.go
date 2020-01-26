@@ -3,7 +3,7 @@ package controllers
 import (
 	mysql "CA-TechDojoGo/db"
 	"CA-TechDojoGo/models"
-	"fmt"
+	"log"
 
 	"github.com/gin-gonic/gin"
 )
@@ -16,9 +16,9 @@ func UserCreate(c *gin.Context) {
 
 	_, err = mysql.DB.Exec("INSERT INTO i_user (name) VALUES (?)", user.UserName)
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 		return
 	}
-	fmt.Println("Inserted into i_user, name=" + user.UserName)
+	log.Println("Inserted into i_user, name=" + user.UserName)
 	return
 }
