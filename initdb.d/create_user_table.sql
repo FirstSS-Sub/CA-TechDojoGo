@@ -1,0 +1,5 @@
+CREATE TABLE i_user (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    name VARCHAR(100),
+    token VARCHAR(100)
+);
